@@ -92,13 +92,33 @@ class ListingView: MSAutoView {
 
 ![Image](https://user-images.githubusercontent.com/24646608/34811485-34100180-f6f5-11e7-9671-44705690d06b.png)
 
-- You can also override the default values from the storyboard's attributes inspector for the view:
+- You can also override the default values from the storyboard's attributes inspector for the view (**Make sure you don't set the attributes in the attribute inspector of the xib or they will override all other values**):
 
 ![Image](https://user-images.githubusercontent.com/24646608/34811582-a519fe26-f6f5-11e7-8d71-80bb77d8c55f.png)
 
 This is the result:
 
 ![Image](https://user-images.githubusercontent.com/24646608/34811599-c514e92a-f6f5-11e7-9405-e85e7ced94d5.png)
+
+- You can also create a reference for the view in the view controller's class and set its values:
+
+```swift
+class ViewController: UIViewController {
+
+    @IBOutlet weak var listingView: ListingView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        listingView.title = "Title from View Controller"
+        listingView.details = "Details from View Controller"
+        listingView.price = 40
+        listingView.updateView()
+    }
+
+}
+```
+
+![Image](https://user-images.githubusercontent.com/24646608/34811911-7f51df36-f6f7-11e7-9a48-fce96c59d195.png)
 
 ## Deployment
 

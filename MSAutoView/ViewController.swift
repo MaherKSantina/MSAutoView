@@ -26,16 +26,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var listingView: ListingView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        listingView.title = "Title from View Controller"
+        listingView.details = "Details from View Controller"
+        listingView.price = 40
+        listingView.updateView()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 
