@@ -28,16 +28,15 @@ infix operator |>
 
 extension UIView{
     /**
-     Embeds a view inside another view
-     - Parameter left: Embedded
-     - Parameter right: Embeddee
+     Embeds a view inside another view and adds constraints to fit the subview in the whole view
+     - Parameter subview: The subview that will be added
      */
-    public static func |> (left: UIView, right: UIView){
-        right.addSubview(left)
-        left.translatesAutoresizingMaskIntoConstraints = false
-        right.layer.masksToBounds = false
+    public func addSubviewWithConstraints(_ subview: UIView){
+        self.addSubview(subview)
+        subview.translatesAutoresizingMaskIntoConstraints = false
+        self.layer.masksToBounds = false
         
-        right.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: ["view":left]))
-        right.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: ["view":left]))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: ["view":subview]))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: ["view":subview]))
     }
 }

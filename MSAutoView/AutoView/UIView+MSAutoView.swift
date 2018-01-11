@@ -38,6 +38,6 @@ extension UIView {
             xib = name
         }
         let xibView = bundle.loadNibNamed(xib, owner: self, options: nil)![index] as! UIView
-        xibView |> self
+        self.addSubviewWithConstraints(xibView)
     }
 }
