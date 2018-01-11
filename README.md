@@ -1,6 +1,12 @@
 # AutoView
 This is a way to create custom views with their own xibs and use them across multiple view controllers, cells etc... Properties can be easily set and customized independently for each view controller
 
+## The Problem
+Throughout my projects I had a problem where I have to use the same view in multiple places, and whenever I implement the layouts in the storyboards, things get messy when the storyboard grows and I have to keep track where I implemented each view. Things get more messy when I want to modify a subview inside these views (layout, color etc..), I had to go through all the storyboard to change them.
+
+## How MSAutoView solves the problem
+MSAutoView allows me to create a single layout xib, and reference it wherever I want it to appear. So I can create a Views folder and add all the xibs in it. Whenever I want to change a color or a layout, I can do it in this view and the change will reflect among all the instances
+
 # Table of Contents
 1. [Prerequisites](#prerequisites)
 2. [Usage](#usage)
@@ -12,6 +18,7 @@ This is a way to create custom views with their own xibs and use them across mul
 ## Prerequisites
 
 - XCode 9
+
 
 ## Usage
 
