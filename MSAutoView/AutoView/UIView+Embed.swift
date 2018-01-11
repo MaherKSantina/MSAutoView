@@ -24,8 +24,6 @@
 
 import UIKit
 
-infix operator |>
-
 extension UIView{
     /**
      Embeds a view inside another view and adds constraints to fit the subview in the whole view
