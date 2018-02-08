@@ -36,13 +36,8 @@ class MSAutoView: UIView {
         initView()
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        initView()
-    }
-    
     private func initView() {
-        addXibInView()
+        addXibInView(from: Bundle.main, xibName: String(describing: type(of: self)))
     }
     
 }
