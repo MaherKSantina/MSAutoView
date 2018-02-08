@@ -17,6 +17,8 @@
 		6902735020072F430058C20D /* ListingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6902734F20072F430058C20D /* ListingView.xib */; };
 		690273522007347E0058C20D /* MSAutoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690273512007347E0058C20D /* MSAutoView.swift */; };
 		69027354200735180058C20D /* ListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69027353200735180058C20D /* ListingView.swift */; };
+		69AC4AB6202BEA84001F5E41 /* ListingDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69AC4AB5202BEA84001F5E41 /* ListingDetailsView.xib */; };
+		69AC4AB8202BEA9D001F5E41 /* ListingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AC4AB7202BEA9D001F5E41 /* ListingDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		6902734F20072F430058C20D /* ListingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListingView.xib; sourceTree = "<group>"; };
 		690273512007347E0058C20D /* MSAutoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSAutoView.swift; sourceTree = "<group>"; };
 		69027353200735180058C20D /* ListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingView.swift; sourceTree = "<group>"; };
+		69AC4AB5202BEA84001F5E41 /* ListingDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListingDetailsView.xib; sourceTree = "<group>"; };
+		69AC4AB7202BEA9D001F5E41 /* ListingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 			children = (
 				6902734F20072F430058C20D /* ListingView.xib */,
 				69027353200735180058C20D /* ListingView.swift */,
+				69AC4AB5202BEA84001F5E41 /* ListingDetailsView.xib */,
+				69AC4AB7202BEA9D001F5E41 /* ListingDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +162,7 @@
 			files = (
 				6902733C200722230058C20D /* LaunchScreen.storyboard in Resources */,
 				6902735020072F430058C20D /* ListingView.xib in Resources */,
+				69AC4AB6202BEA84001F5E41 /* ListingDetailsView.xib in Resources */,
 				69027339200722230058C20D /* Assets.xcassets in Resources */,
 				69027337200722230058C20D /* Main.storyboard in Resources */,
 			);
@@ -170,6 +177,7 @@
 			files = (
 				69027347200723320058C20D /* UIView+MSAutoView.swift in Sources */,
 				69027345200722B50058C20D /* UIView+Embed.swift in Sources */,
+				69AC4AB8202BEA9D001F5E41 /* ListingDetailsView.swift in Sources */,
 				690273522007347E0058C20D /* MSAutoView.swift in Sources */,
 				69027334200722230058C20D /* ViewController.swift in Sources */,
 				69027332200722230058C20D /* AppDelegate.swift in Sources */,
@@ -314,7 +322,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MSAutoView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mahersantina.MSAutoView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mahersantina.MSAutoView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -329,7 +337,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MSAutoView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mahersantina.MSAutoView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mahersantina.MSAutoView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
