@@ -24,14 +24,14 @@
 
 import UIKit
 
-class MSAutoView: UIView {
+public class MSAutoView: UIView {
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initView()
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         initView()
     }
