@@ -21,7 +21,7 @@ class ListingDetailsView: ListingView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        testLabel.text = "hala"
+        testLabel.text = "Test inherited"
     }
 
 }
