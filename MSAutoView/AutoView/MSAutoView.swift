@@ -24,7 +24,7 @@
 
 import UIKit
 
-public class MSAutoView: UIView {
+open class MSAutoView: UIView {
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
