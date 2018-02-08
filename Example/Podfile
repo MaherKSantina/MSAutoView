@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MSAutoView_Example' do
+  pod 'MSAutoView', :path => '../'
+
+  target 'MSAutoView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
