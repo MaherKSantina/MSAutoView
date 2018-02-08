@@ -54,7 +54,7 @@
 		74BF74D2B5DF7CF0BDE81992 /* Pods_MSAutoView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MSAutoView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E18908C63749266608BADF /* Pods-MSAutoView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSAutoView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSAutoView_Example/Pods-MSAutoView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		BCDDE7A997AA049676B94252 /* Pods-MSAutoView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSAutoView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MSAutoView_Example/Pods-MSAutoView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		E0CC20DD44DD3950900C910C /* MSAutoView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MSAutoView.podspec; path = ../MSAutoView.podspec; sourceTree = "<group>"; };
+		E0CC20DD44DD3950900C910C /* MSAutoView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MSAutoView.podspec; path = ../MSAutoView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F457507B054CFDA88CDE8841 /* Pods_MSAutoView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MSAutoView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
