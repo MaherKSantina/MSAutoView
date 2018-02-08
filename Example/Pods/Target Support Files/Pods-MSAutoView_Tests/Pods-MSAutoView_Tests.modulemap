@@ -1,6 +1,0 @@
-framework module Pods_MSAutoView_Tests {
-  umbrella header "Pods-MSAutoView_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}

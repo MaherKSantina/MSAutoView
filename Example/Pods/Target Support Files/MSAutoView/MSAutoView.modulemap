@@ -1,6 +1,0 @@
-framework module MSAutoView {
-  umbrella header "MSAutoView-umbrella.h"
-
-  export *
-  module * { export * }
-}
