@@ -90,7 +90,6 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				693D512F2036C16000B69BF9 /* Assets.xcassets */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for MSAutoView */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -112,6 +111,7 @@
 		607FACD21AFB9204008FA782 /* Example for MSAutoView */ = {
 			isa = PBXGroup;
 			children = (
+				693D512F2036C16000B69BF9 /* Assets.xcassets */,
 				699DCC7D202C77270002BD09 /* Main.storyboard */,
 				699DCC77202C77200002BD09 /* ViewController.swift */,
 				699DCC72202C77200002BD09 /* Views */,
