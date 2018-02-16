@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		693D51302036C16000B69BF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 693D512F2036C16000B69BF9 /* Assets.xcassets */; };
 		699DCC71202C77160002BD09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699DCC70202C77160002BD09 /* AppDelegate.swift */; };
 		699DCC78202C77200002BD09 /* ListingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699DCC73202C77200002BD09 /* ListingDetailsView.swift */; };
 		699DCC79202C77200002BD09 /* ListingDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 699DCC74202C77200002BD09 /* ListingDetailsView.xib */; };
@@ -41,6 +42,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		691A9A8A5E37EEE769C22D7A /* Pods-MSAutoView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSAutoView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSAutoView_Tests/Pods-MSAutoView_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		693D512F2036C16000B69BF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		699DCC6F202C77150002BD09 /* MSAutoView_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MSAutoView_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		699DCC70202C77160002BD09 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		699DCC73202C77200002BD09 /* ListingDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingDetailsView.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				693D512F2036C16000B69BF9 /* Assets.xcassets */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for MSAutoView */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -271,6 +274,7 @@
 				699DCC7E202C77270002BD09 /* Main.storyboard in Resources */,
 				699DCC7B202C77200002BD09 /* ListingView.xib in Resources */,
 				699DCC79202C77200002BD09 /* ListingDetailsView.xib in Resources */,
+				693D51302036C16000B69BF9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +535,7 @@
 			baseConfigurationReference = BCDDE7A997AA049676B94252 /* Pods-MSAutoView_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MSAutoView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -549,6 +554,7 @@
 			baseConfigurationReference = A4E18908C63749266608BADF /* Pods-MSAutoView_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MSAutoView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

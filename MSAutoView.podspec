@@ -33,9 +33,9 @@ MSAutoView will allow you to create a xib file in a separate file, and reference
 
   s.source_files = 'MSAutoView/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'MSAutoView' => ['MSAutoView/Assets/*.png']
-  # }
+  s.resource_bundles = {
+     'MSAutoView' => ['MSAutoView/Assets/*.png']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
