@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MSAutoView'
-  s.version          = '1.0.9'
+  s.version          = '1.0.10'
   s.summary          = 'An easy way to create reusable xibs.'
   s.swift_version    = '3.2'
 
