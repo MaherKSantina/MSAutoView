@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		699DCC71202C77160002BD09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699DCC70202C77160002BD09 /* AppDelegate.swift */; };
@@ -37,7 +36,6 @@
 		5023723742AC700DDCCE590D /* Pods-MSAutoView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSAutoView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MSAutoView_Tests/Pods-MSAutoView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* MSAutoView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSAutoView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* MSAutoView_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MSAutoView_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 				699DCC77202C77200002BD09 /* ViewController.swift */,
 				699DCC72202C77200002BD09 /* Views */,
 				699DCC70202C77160002BD09 /* AppDelegate.swift */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				699DCC6F202C77150002BD09 /* MSAutoView_Example-Bridging-Header.h */,
@@ -273,7 +270,6 @@
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				699DCC7E202C77270002BD09 /* Main.storyboard in Resources */,
 				699DCC7B202C77200002BD09 /* ListingView.xib in Resources */,
-				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 				699DCC79202C77200002BD09 /* ListingDetailsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
