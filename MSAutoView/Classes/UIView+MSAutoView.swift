@@ -34,10 +34,7 @@ extension UIView {
      */
     public func addXibInView(from bundle: Bundle? = nil, xibName: String? = nil, index: Int = 0){
         let finalBundle = bundle ?? Bundle(for: type(of: self))
-        var xib: String = String(describing: type(of: self))
-        if let name = xibName {
-            xib = name
-        }
+        let xib = xibName ?? String(describing: type(of: self))
         let xibView = finalBundle.loadNibNamed(xib, owner: self, options: nil)![index] as! UIView
         self.addSubviewWithConstraints(xibView)
     }

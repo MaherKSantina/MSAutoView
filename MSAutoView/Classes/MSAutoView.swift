@@ -37,7 +37,7 @@ open class MSAutoView: UIView {
     }
     
     open func initView() {
-        addXibInView(xibName: String(describing: type(of: self)))
+        addXibInView()
     }
     
     open func updateView() {
