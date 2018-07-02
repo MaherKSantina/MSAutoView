@@ -36,11 +36,15 @@ open class MSAutoView: UIView {
         initView()
     }
     
-    public func initView() {
+    open func initView() {
         addXibInView(xibName: String(describing: type(of: self)))
     }
     
-    public func updateView() {
+    open func updateView() {
+        //Override
+    }
+    
+    open func updateEmptyView() {
         //Override
     }
     
