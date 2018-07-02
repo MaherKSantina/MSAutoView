@@ -95,12 +95,7 @@ class ListingView: MSAutoView {
     @IBInspectable var details: String = "This is a default details"
     @IBInspectable var price: Double = 300
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        updateView()
-    }
-    
-    func updateView() {
+    override func updateView() {
         titleLabel.text = title
         detailsLabel.text = details
         priceLabel.text = String(describing: price)
@@ -139,10 +134,6 @@ class ViewController: UIViewController {
 ```
 
 ![Image](https://user-images.githubusercontent.com/24646608/34811911-7f51df36-f6f7-11e7-9a48-fce96c59d195.png)
-
-## Deployment
-
-If you want to use the auto view in your own project just copy the AutoView Folder.
 
 ## Authors
 

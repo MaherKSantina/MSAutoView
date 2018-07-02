@@ -35,12 +35,13 @@ class ListingView: MSAutoView {
     @IBInspectable var details: String = "This is a default details"
     @IBInspectable var price: Double = 300
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func initView() {
+        super.initView()
         updateView()
     }
     
-    func updateView() {
+    override func updateView() {
+        super.updateView()
         titleLabel.text = title
         detailsLabel.text = details
         priceLabel.text = String(describing: price)
