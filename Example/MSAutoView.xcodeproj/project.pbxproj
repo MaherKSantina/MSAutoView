@@ -193,7 +193,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				4C75CFF6D510F2F959B8DAED /* [CP] Embed Pods Frameworks */,
-				52649E039B34FF10A159A6CF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -212,8 +211,6 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				F96404B520E0ADBAAC0A74CF /* [CP] Embed Pods Frameworks */,
-				7493BFE7EE2EE0BFDEEC11BB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -340,51 +337,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MSAutoView_Example/Pods-MSAutoView_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		52649E039B34FF10A159A6CF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MSAutoView_Example/Pods-MSAutoView_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7493BFE7EE2EE0BFDEEC11BB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MSAutoView_Tests/Pods-MSAutoView_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F96404B520E0ADBAAC0A74CF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MSAutoView_Tests/Pods-MSAutoView_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

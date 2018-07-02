@@ -32,12 +32,13 @@ extension UIView {
      - Parameter index: Index of View in Xib file
      
      */
-    public func addXibInView(from bundle: Bundle = Bundle.main, xibName: String? = nil, index: Int = 0){
+    public func addXibInView(from bundle: Bundle? = nil, xibName: String? = nil, index: Int = 0){
+        let finalBundle = bundle ?? Bundle(for: type(of: self))
         var xib: String = String(describing: type(of: self))
         if let name = xibName {
             xib = name
         }
-        let xibView = bundle.loadNibNamed(xib, owner: self, options: nil)![index] as! UIView
+        let xibView = finalBundle.loadNibNamed(xib, owner: self, options: nil)![index] as! UIView
         self.addSubviewWithConstraints(xibView)
     }
 }
