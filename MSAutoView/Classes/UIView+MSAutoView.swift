@@ -26,16 +26,22 @@ import UIKit
 
 extension UIView {
     /**
-     Loads a xib inside the View
-     - Parameter bundle: Bundle that holds the Xib
-     - Parameter xibName: Name of the Xib to be loaded. If left blank a Xib with the same name of the class will be loaded
-     - Parameter index: Index of View in Xib file
-     
+     Embeds a view inside another view and adds constraints to fit the subview in the whole view
+     - Parameter subview: The subview that will be added
+     - returns: An array of constraints that were added to the view. The array will contain the top, left, bottom, right constraints with the same order.
      */
-    public func addXibInView(from bundle: Bundle? = nil, xibName: String? = nil, index: Int = 0){
-        let finalBundle = bundle ?? Bundle(for: type(of: self))
-        let xib = xibName ?? String(describing: type(of: self))
-        let xibView = finalBundle.loadNibNamed(xib, owner: self, options: nil)![index] as! UIView
-        self.addSubviewWithConstraints(xibView)
+    @discardableResult
+    public func addSubviewWithConstraints(_ subview: UIView, topConstant: CGFloat = 0, leftConstant: CGFloat = 0, bottomConstant: CGFloat = 0, rightConstant: CGFloat = 0) -> [NSLayoutConstraint]{
+        
+        subview.translatesAutoresizingMaskIntoConstraints = false
+        
+        let constants: [CGFloat] = [topConstant, leftConstant, bottomConstant, rightConstant]
+        let viewConstraints = [NSLayoutAttribute.top, NSLayoutAttribute.left, NSLayoutAttribute.bottom, NSLayoutAttribute.right].enumerated().map { (index, attribute) -> NSLayoutConstraint in
+            return NSLayoutConstraint(item: subview, attribute: attribute, relatedBy: .equal, toItem: self, attribute: attribute, multiplier: 1, constant: constants[index])
+        }
+        
+        addSubview(subview)
+        addConstraints(viewConstraints)
+        return constraints
     }
 }
