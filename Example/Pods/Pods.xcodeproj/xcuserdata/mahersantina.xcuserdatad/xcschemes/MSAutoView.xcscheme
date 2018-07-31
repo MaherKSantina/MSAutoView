@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "31528EA1DF5E0076C1773AD827CEE620"
+               BlueprintIdentifier = "EEEE36EB313752D593A96CBDCD399D46"
                BlueprintName = "MSAutoView"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "MSAutoView.framework">

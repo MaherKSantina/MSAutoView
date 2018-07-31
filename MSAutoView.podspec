@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MSAutoView'
-  s.version          = '2.0.0'
+  s.version          = '2.1.0'
   s.summary          = 'An easy way to create reusable xibs.'
   s.swift_version    = '3.2'
 
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-MSAutoView will allow you to create a xib file in a separate file, and reference the same xib throughout the whole project. Modify in one place and use everywhere.
+MSAutoView will allow you to create a view in a separate xib file, and reference the same xib throughout the whole project. Modify in one place and use everywhere.
                        DESC
 
   s.homepage         = 'https://github.com/MaherKSantina/MSAutoView'
