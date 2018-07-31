@@ -24,7 +24,34 @@
 
 import UIKit
 
-open class MSAutoView: UIView {
+protocol XibEmbedding: AnyObject {
+    static var xibBundle: Bundle? { set get  }
+    static var xibName: String? { set get }
+    var xibItems: [Any]? { set get }
+    
+    func loadXibMainView()
+    func loadXibItems() -> [Any]
+}
+
+extension XibEmbedding where Self: UIView {
+    
+    func loadXibMainView() {
+        self.xibItems = loadXibItems()
+        let view = self.xibItems?[0] as! UIView
+        addSubviewWithConstraints(view)
+    }
+    
+    func loadXibItems() -> [Any] {
+        return (Self.xibBundle ?? Bundle(for: type(of: self))).loadNibNamed(Self.xibName ?? String(describing: type(of: self)), owner: self, options: nil) ?? []
+    }
+}
+
+open class MSAutoView: UIView, XibEmbedding {
+    
+    static var xibBundle: Bundle?
+    static var xibName: String?
+    var xibItems: [Any]?
+    
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -37,7 +64,7 @@ open class MSAutoView: UIView {
     }
     
     open func initView() {
-        addXibInView()
+        loadXibMainView()
     }
     
     open func updateView() {
