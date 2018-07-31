@@ -24,7 +24,7 @@
 
 import UIKit
 
-protocol XibEmbedding: AnyObject {
+protocol MSXibEmbedding: AnyObject {
     static var xibBundle: Bundle? { set get  }
     static var xibName: String? { set get }
     var xibItems: [Any]? { set get }
@@ -33,7 +33,7 @@ protocol XibEmbedding: AnyObject {
     func loadXibItems() -> [Any]
 }
 
-extension XibEmbedding where Self: UIView {
+extension MSXibEmbedding where Self: UIView {
     
     func loadXibMainView() {
         self.xibItems = loadXibItems()
@@ -46,7 +46,7 @@ extension XibEmbedding where Self: UIView {
     }
 }
 
-open class MSAutoView: UIView, XibEmbedding {
+open class MSAutoView: UIView, MSXibEmbedding {
     
     static var xibBundle: Bundle?
     static var xibName: String?

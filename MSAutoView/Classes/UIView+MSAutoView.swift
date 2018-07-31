@@ -26,20 +26,6 @@ import UIKit
 
 extension UIView {
     /**
-     Loads a xib inside the View
-     - Parameter bundle: Bundle that holds the Xib
-     - Parameter xibName: Name of the Xib to be loaded. If left blank a Xib with the same name of the class will be loaded
-     - Parameter index: Index of View in Xib file
-     
-     */
-    public func addXibInView(from bundle: Bundle? = nil, xibName: String? = nil, index: Int = 0){
-        let finalBundle = bundle ?? Bundle(for: type(of: self))
-        let xib = xibName ?? String(describing: type(of: self))
-        let xibView = finalBundle.loadNibNamed(xib, owner: self, options: nil)![index] as! UIView
-        self.addSubviewWithConstraints(xibView)
-    }
-    
-    /**
      Embeds a view inside another view and adds constraints to fit the subview in the whole view
      - Parameter subview: The subview that will be added
      */
