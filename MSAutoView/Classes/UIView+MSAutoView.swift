@@ -28,13 +28,18 @@ extension UIView {
     /**
      Embeds a view inside another view and adds constraints to fit the subview in the whole view
      - Parameter subview: The subview that will be added
+     - returns: An array of constraints that were added to the view. The array will contain the top, left, bottom, right constraints with the same order.
      */
-    public func addSubviewWithConstraints(_ subview: UIView){
+    @discardableResult
+    public func addSubviewWithConstraints(_ subview: UIView) -> [NSLayoutConstraint]{
         self.addSubview(subview)
         subview.translatesAutoresizingMaskIntoConstraints = false
         self.layer.masksToBounds = false
         
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: ["view":subview]))
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: ["view":subview]))
+        let constraints = [NSLayoutAttribute.top, NSLayoutAttribute.left, NSLayoutAttribute.bottom, NSLayoutAttribute.right].map { (attribute) -> NSLayoutConstraint in
+            return NSLayoutConstraint(item: subview, attribute: attribute, relatedBy: .equal, toItem: self, attribute: attribute, multiplier: 1, constant: 0)
+        }
+        self.addConstraints(constraints)
+        return constraints
     }
 }
