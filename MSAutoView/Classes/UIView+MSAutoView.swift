@@ -31,15 +31,17 @@ extension UIView {
      - returns: An array of constraints that were added to the view. The array will contain the top, left, bottom, right constraints with the same order.
      */
     @discardableResult
-    public func addSubviewWithConstraints(_ subview: UIView) -> [NSLayoutConstraint]{
-        self.addSubview(subview)
-        subview.translatesAutoresizingMaskIntoConstraints = false
-        self.layer.masksToBounds = false
+    public func addSubviewWithConstraints(_ subview: UIView, topConstant: CGFloat = 0, leftConstant: CGFloat = 0, bottomConstant: CGFloat = 0, rightConstant: CGFloat = 0) -> [NSLayoutConstraint]{
         
-        let constraints = [NSLayoutAttribute.top, NSLayoutAttribute.left, NSLayoutAttribute.bottom, NSLayoutAttribute.right].map { (attribute) -> NSLayoutConstraint in
-            return NSLayoutConstraint(item: subview, attribute: attribute, relatedBy: .equal, toItem: self, attribute: attribute, multiplier: 1, constant: 0)
+        subview.translatesAutoresizingMaskIntoConstraints = false
+        
+        let constants: [CGFloat] = [topConstant, leftConstant, bottomConstant, rightConstant]
+        let viewConstraints = [NSLayoutAttribute.top, NSLayoutAttribute.left, NSLayoutAttribute.bottom, NSLayoutAttribute.right].enumerated().map { (index, attribute) -> NSLayoutConstraint in
+            return NSLayoutConstraint(item: subview, attribute: attribute, relatedBy: .equal, toItem: self, attribute: attribute, multiplier: 1, constant: constants[index])
         }
-        self.addConstraints(constraints)
+        
+        addSubview(subview)
+        addConstraints(viewConstraints)
         return constraints
     }
 }
