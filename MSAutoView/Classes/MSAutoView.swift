@@ -24,7 +24,7 @@
 
 import UIKit
 
-protocol MSXibEmbedding: AnyObject {
+public protocol MSXibEmbedding: AnyObject {
     static var xibBundle: Bundle? { set get  }
     static var xibName: String? { set get }
     var xibItems: [Any]? { set get }
@@ -36,22 +36,22 @@ protocol MSXibEmbedding: AnyObject {
 extension MSXibEmbedding where Self: UIView {
     
     @discardableResult
-    func loadXibMainView(topConstant: CGFloat = 0, leftConstant: CGFloat = 0, bottomConstant: CGFloat = 0, rightConstant: CGFloat = 0) -> [NSLayoutConstraint] {
+    public func loadXibMainView(topConstant: CGFloat = 0, leftConstant: CGFloat = 0, bottomConstant: CGFloat = 0, rightConstant: CGFloat = 0) -> [NSLayoutConstraint] {
         self.xibItems = loadXibItems()
         let view = self.xibItems?[0] as! UIView
         return addSubviewWithConstraints(view, topConstant: topConstant, leftConstant: leftConstant, bottomConstant: bottomConstant, rightConstant: rightConstant)
     }
     
-    func loadXibItems() -> [Any] {
+    public func loadXibItems() -> [Any] {
         return (Self.xibBundle ?? Bundle(for: type(of: self))).loadNibNamed(Self.xibName ?? String(describing: type(of: self)), owner: self, options: nil) ?? []
     }
 }
 
 open class MSAutoView: UIView, MSXibEmbedding {
     
-    static var xibBundle: Bundle?
-    static var xibName: String?
-    var xibItems: [Any]?
+    public static var xibBundle: Bundle?
+    public static var xibName: String?
+    public var xibItems: [Any]?
     
     
     public required init?(coder aDecoder: NSCoder) {
