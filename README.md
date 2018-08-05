@@ -107,7 +107,7 @@ class ListingView: MSAutoView {
 @IBOutlet weak var listingView: ListingView!
 ```
 
-6. Connect the view's outlet to the storyboard view
+6. Connect the view controller's outlet to the view in the storyboard
 
 7. Set the values anywhere in the view controller and update the view:
 ```swift
