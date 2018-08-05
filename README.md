@@ -51,7 +51,7 @@ class ListingView: MSAutoView {
 ```
 **Note: For the minimal configuration to work, the class's name should be the same as the xib's name**
 
-8. Add a normal view to your storyboard
+8. In the storyboard, add a normal view to your view controller
 9. Set its class to the one created
 10. Run the project, the view should contain the content of the xib
 
