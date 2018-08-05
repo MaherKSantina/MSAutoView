@@ -29,17 +29,16 @@ public protocol MSXibEmbedding: AnyObject {
     var xibName: String? { set get }
     var xibItems: [Any]? { set get }
     
-    func loadXibMainView(topConstant: CGFloat, leftConstant: CGFloat, bottomConstant: CGFloat, rightConstant: CGFloat) -> [NSLayoutConstraint]
+    func loadXibMainView(constraintsConfiguration: ConstraintsConfiguration?)
     func loadXibItems() -> [Any]?
 }
 
 extension MSXibEmbedding where Self: UIView {
     
-    @discardableResult
-    public func loadXibMainView(topConstant: CGFloat = 0, leftConstant: CGFloat = 0, bottomConstant: CGFloat = 0, rightConstant: CGFloat = 0) -> [NSLayoutConstraint] {
+    public func loadXibMainView(constraintsConfiguration: ConstraintsConfiguration? = nil) {
         self.xibItems = loadXibItems()
         let view = self.xibItems?[0] as! UIView
-        return addSubviewWithConstraints(view, topConstant: topConstant, leftConstant: leftConstant, bottomConstant: bottomConstant, rightConstant: rightConstant)
+        return addSubviewWithConstraints(view, constraintsConfiguration: constraintsConfiguration)
     }
     
     public func loadXibItems() -> [Any]? {
