@@ -165,6 +165,22 @@ var title: String? = "Default Title"
 ```
 2. If it's an inspectable variable, set the value in the xib file
 
+### Adding padding to the main xib view programmatically
+As a recap, the class will embed the xib's view in the main view by adding top, left, bottom and right constraints. To add padding to the constraints, we can set their constant value other than 0, you can do that in the `initView()` function:
+
+```swift
+override func initView() {
+    super.initView { (top, left, bottom, right) in
+        top.constant = 10
+        left.constant = 10
+        bottom.constant = -10
+        right.constant = -10
+    }
+    updateView()
+}
+```
+Note that the bottom and right constants should be negative to work as intended
+
 
 ### Using a xib with name different than class name
 If you wish to name your xib something other than the class name, you can do the following:
@@ -184,6 +200,24 @@ class ListingView: MSAutoView {
 
 }
 ```
+
+### Subclassing views to inherit common layout
+
+### Using protocol instead of subclassing
+If subclassing is not an option, there's a protocol that can be used to easily embed views:
+
+```swift
+public protocol MSXibEmbedding: AnyObject {
+    var xibBundle: Bundle? { set get  }
+    var xibName: String? { set get }
+    
+    func loadXibMainView(constraintsConfiguration: ConstraintsConfiguration?)
+    func loadXibItems(xibItemsConfiguration: XibItemsConfiguration?)
+}
+```
+
+There's extension functions for the protocol functions so you don't have to worry about the actual implementation. Just make your view conform to the `MSXibEmbedding` protocol and call `loadXibMainView()` when you initialize your view
+
 
 ## Authors
 
