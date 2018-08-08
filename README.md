@@ -224,6 +224,7 @@ class ListingView: MSAutoView {
 
 ### Subclassing views to inherit common layout
 
+
 ### Using protocol instead of subclassing
 If you inherit from another view and subclassing is not an option, there's a protocol that can be used to easily embed views:
 
@@ -238,6 +239,8 @@ public protocol MSXibEmbedding: AnyObject {
 ```
 
 There's extension functions for the protocol functions so you don't have to worry about the actual implementation. Just make your view conform to the `MSXibEmbedding` protocol and call `loadXibMainView()` when you initialize your view
+
+### Add a xib inside a custom view
 
 
 ## Authors
