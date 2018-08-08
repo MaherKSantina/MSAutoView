@@ -64,8 +64,12 @@ open class MSAutoView: UIView, MSXibEmbedding {
         initView()
     }
     
+    open func initView(constraintsConfiguration: ConstraintsConfiguration? = nil) {
+        loadXibMainView(constraintsConfiguration: constraintsConfiguration)
+    }
+    
     open func initView() {
-        loadXibMainView()
+        initView(constraintsConfiguration: nil)
     }
     
     open func updateView() {
