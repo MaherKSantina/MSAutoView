@@ -165,6 +165,9 @@ var title: String? = "Default Title"
 ```
 2. If it's an inspectable variable, set the value in the xib file
 
+### Setting defaut value for view in a specific view controller
+If your class variables are inspectables, you can change the default values in the storyboard
+
 ### Adding padding to the main xib view programmatically
 As a recap, the class will embed the xib's view in the main view by adding top, left, bottom and right constraints. To add padding to the constraints, we can set their constant value other than 0, you can do that in the `initView()` function:
 
@@ -201,10 +204,28 @@ class ListingView: MSAutoView {
 }
 ```
 
+### Using a xib with bundle different than the class bundle
+
+```swift
+class ListingView: MSAutoView {
+
+    //Outlets
+    
+    //Variables
+    
+    override func initView() {
+        self.xibBundle = Bundle(identifier: "Identifier")
+        super.initView()
+    }
+
+}
+```
+
+
 ### Subclassing views to inherit common layout
 
 ### Using protocol instead of subclassing
-If subclassing is not an option, there's a protocol that can be used to easily embed views:
+If you inherit from another view and subclassing is not an option, there's a protocol that can be used to easily embed views:
 
 ```swift
 public protocol MSXibEmbedding: AnyObject {
