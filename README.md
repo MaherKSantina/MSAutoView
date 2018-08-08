@@ -31,6 +31,10 @@ This is an example of how your view files will be structured when using MSAutoVi
 
 Each view will have its own xib file and swift file. The xib file will contain the view hierarchy, and the swift file will hold the logic for this view.
 
+`MSAutoView` is a subclass of `UIView`. When creating a class that inherits from `MSAutoView`, it automatically finds the corresponding xib and adds it as a subview. It also creates top, bottom, left and right constraints for the subview to hold it in place.
+
+**Note: The view in the xib should not have constraint ambiguity or it would not show properly**
+
 ## Usage
 ### Minimal Configuration
 #### Storyboard
@@ -52,13 +56,13 @@ class ListingView: MSAutoView {
 **Note: For the minimal configuration to work, the class's name should be the same as the xib's name**
 
 8. In the storyboard, add a normal view to your view controller
-9. Set its class to the one created
+9. Set its class to the one created (`ListingView`)
 10. Run the project, the view should contain the content of the xib
 
     ![Image](https://user-images.githubusercontent.com/24646608/34811158-9ee32e80-f6f3-11e7-9645-b488647af327.png)
     
 ## Customization
-### Updating Views Programmatically
+### Updating View Programmatically
 
 Ofcourse, the reusable view will be useless if you can't pass data to it programmatically. To do that, follow the steps below:
 
@@ -78,29 +82,6 @@ class ListingView: MSAutoView {
 
 3. In the xib file, connect the outlets to their respective views
 
-4. In the class file, create the logic to set values to the views:
-
-```swift
-class ListingView: MSAutoView {
-    
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var detailsLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    
-    var title: String?
-    var details: String?
-    var price: String?
-    
-    override func updateView() {
-        super.updateView()
-        titleLabel.text = title
-        detailsLabel.text = details
-        priceLabel.text = price
-        
-    }
-    
-}
-```
 5. In the view controller, create an outlet for the view
 
 ```swift
@@ -109,12 +90,99 @@ class ListingView: MSAutoView {
 
 6. Connect the view controller's outlet to the view in the storyboard
 
-7. Set the values anywhere in the view controller and update the view:
+7. Change the text values of the labels in the view controller:
+
+```swift
+listingView.titleLabel.text = "This is a default title"
+listingView.detailsLabel.text =  "This is a default details"
+listingView.priceLabel.text = "300"
+```
+
+### Adding variables to update the view
+It's not a good convention to directly update the fields in the labels. So, you can create variables to hold the values, and update the view when you change the values. To do that, follow the steps below:
+
+1. In the `ListingView` class file, add the following variables:
+
+```swift
+class ListingView: MSAutoView {
+    
+    //Outlets
+    
+    var title: String?
+    var details: String?
+    var price: String?
+}
+```
+2. Override `updateView()` function to set the label texts:
+
+```swift
+class ListingView: MSAutoView {
+    
+    //Outlets
+    
+    //Variables
+    
+    override func updateView() {
+        super.updateView()
+        titleLabel.text = title
+        detailsLabel.text = details
+        priceLabel.text = price
+    }
+}
+```
+3. Set the values anywhere in the view controller and update the view:
+
 ```swift
 listingView.title = "This is a default title"
 listingView.details =  "This is a default details"
 listingView.price = "300"
 listingView.updateView()
+```
+
+### Using Inspectable variables
+You can use inspectable variables to hold the values for the labels:
+
+```swift
+class ListingView: MSAutoView {
+    
+    //Outlets
+    
+    @IBInspectable var title: String?
+    @IBInspectable var details: String?
+    @IBInspectable var price: Double = 0
+    
+    //Functions
+}
+```
+
+After creating the inspectable variables, you can set them either in the xib or the view controller
+
+### Using a default value for all instances of the view
+You can do this in 2 ways:
+1. Set the value in code:
+```swift
+var title: String? = "Default Title"
+```
+2. If it's an inspectable variable, set the value in the xib file
+
+
+### Using a xib with name different than class name
+If you wish to name your xib something other than the class name, you can do the following:
+1. In the class file, override the `initView()` function:
+
+```swift
+class ListingView: MSAutoView {
+
+    //Outlets
+    
+    //Variables
+    
+    override func initView() {
+        self.xibName = "ListingView2"
+        super.initView()
+    }
+
+}
 ```
 
 ## Authors
