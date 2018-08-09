@@ -6,10 +6,11 @@ To create an iOS app, you have to deal with ALOT of views. So, managing differen
 1. [Installation](#installation)
 1. [Prerequisites](#prerequisites)
 2. [Usage](#usage)
-3. [Customization](#customization)
-4. [Deployment](#deployment)
-5. [Authors](#authors)
-6. [License](#license)
+3. [Structure](#structure)
+4. [Customization](#customization)
+5. [Deployment](#deployment)
+6. [Authors](#authors)
+7. [License](#license)
 
 ## Installation
 
@@ -55,9 +56,8 @@ class ListingView: MSAutoView {
 ```
 **Note: For the minimal configuration to work, the class's name should be the same as the xib's name**
 
-8. In the storyboard, add a normal view to your view controller
-9. Set its class to the one created (`ListingView`)
-10. Run the project, the view should contain the content of the xib
+3. In the storyboard, add a normal view to your view controller and set its chass to the one created (`ListingView`)
+4. Run the project, the view should contain the content of the xib
 
     ![Image](https://user-images.githubusercontent.com/24646608/34811158-9ee32e80-f6f3-11e7-9645-b488647af327.png)
     
@@ -99,7 +99,7 @@ listingView.priceLabel.text = "300"
 ```
 
 ### Adding variables to update the view
-It's not a good convention to directly update the fields in the labels. So, you can create variables to hold the values, and update the view when you change the values. To do that, follow the steps below:
+It's not a good convention to directly update the text in the labels. So, you can create variables to hold the values, and update the view when you change the values. To do that, follow the steps below:
 
 1. In the `ListingView` class file, add the following variables:
 
