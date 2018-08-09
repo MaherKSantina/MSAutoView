@@ -169,7 +169,7 @@ var title: String? = "Default Title"
 If your class variables are inspectables, you can change the default values in the storyboard
 
 ### Adding padding to the main xib view programmatically
-As a recap, the class will embed the xib's view in the main view by adding top, left, bottom and right constraints. To add padding to the constraints, we can set their constant value other than 0, you can do that in the `initView()` function:
+As a recap, the class will embed the xib's view in the main view by adding top, left, bottom and right constraints. To add padding to the constraints, you can set their constant value other than 0. You can do that in the `initView()` function:
 
 ```swift
 override func initView() {
@@ -221,10 +221,6 @@ class ListingView: MSAutoView {
 }
 ```
 
-
-### Subclassing views to inherit common layout
-
-
 ### Using protocol instead of subclassing
 If you inherit from another view and subclassing is not an option, there's a protocol that can be used to easily embed views:
 
@@ -240,8 +236,29 @@ public protocol MSXibEmbedding: AnyObject {
 
 There's extension functions for the protocol functions so you don't have to worry about the actual implementation. Just make your view conform to the `MSXibEmbedding` protocol and call `loadXibMainView()` when you initialize your view
 
-### Add a xib inside a custom view
+### Adding a view inside another view with constraints programmatically
 
+You can easily aggregate views by placing them inside each other. You can do that using the `UIView` extension function below:
+
+```swift
+public func addSubviewWithConstraints(_ subview: UIView, constraintsConfiguration: ConstraintsConfiguration? = nil)
+```
+
+Example:
+```swift
+parentView.addSubviewWithConstraints(childView)
+```
+
+### Using xibs with multiple items
+You might want to use a xib which has multiple top level views. Maybe there are also objects other than views. To do that, override the `initView()` as follows:
+```swift
+override func initView() {
+    loadXibItems { (items) in
+        //Use xib items here, maybe save them in variables ...
+    }
+}
+```
+**Note: If you call `loadXibItems` more than once, the previously loaded xib items will be discarded and the new items will be available. So you might get a `nil` if you try to access a discarded item.**
 
 ## Authors
 
