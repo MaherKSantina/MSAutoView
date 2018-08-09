@@ -1,23 +1,16 @@
 # MSAutoView
 
-This is a way to create custom views with their own xibs and use them across multiple view controllers, cells etc... Properties can be easily set and customized independently for each view controller
+To create an iOS app, you have to deal with ALOT of views. So, managing different views will become painful as the project grows. Sometimes, a single view will be used in multiple places with small variations. You feel that if there's a way to manage every view in one place would save you alot of trouble. Well, this is what MSAutoView does exactly.
 
 # Table of Contents
-1. [The Problem](#the-problem)
-1. [How MSAutoView solves the problem](#how-msautoview-solves-the-problem)
 1. [Installation](#installation)
 1. [Prerequisites](#prerequisites)
 2. [Usage](#usage)
-3. [Customizing The View](#customizing-the-view)
-4. [Deployment](#deployment)
-5. [Authors](#authors)
-6. [License](#license)
-
-## The Problem
-Throughout my projects I had a problem where I have to use the same view in multiple places, and whenever I implement the layouts in the storyboards, things get messy when the storyboard grows and I have to keep track where I implemented each view. Things get more messy when I want to modify a subview inside these views (layout, color etc..), I had to go through all the storyboard to change them.
-
-## How MSAutoView solves the problem
-MSAutoView allows me to create a single layout xib, and reference it wherever I want it to appear. So I can create a Views folder and add all the xibs in it. Whenever I want to change a color or a layout, I can do it in this view and the change will reflect among all the instances
+3. [Structure](#structure)
+4. [Customization](#customization)
+5. [Deployment](#deployment)
+6. [Authors](#authors)
+7. [License](#license)
 
 ## Installation
 
@@ -33,42 +26,49 @@ pod 'MSAutoView'
 - XCode 9
 
 
+## Structure
+This is an example of how your view files will be structured when using MSAutoView:
+![Image](https://user-images.githubusercontent.com/24646608/43649568-d343d6c4-9780-11e8-952b-bf9523f82dbd.png)
+
+Each view will have its own xib file and swift file. The xib file will contain the view hierarchy, and the swift file will hold the logic for this view.
+
+`MSAutoView` is a subclass of `UIView`. When creating a class that inherits from `MSAutoView`, it automatically finds the corresponding xib and adds it as a subview. It also creates top, bottom, left and right constraints for the subview to hold it in place.
+
+**Note: The view in the xib should not have constraint ambiguity or it would not show properly**
+
 ## Usage
+### Minimal Configuration
+#### Storyboard
 
-1. Add a xib and give it any name (in my case it will be "ListingView") 
-![Image](https://user-images.githubusercontent.com/24646608/34810071-57e5fa72-f6ed-11e7-9ab1-a316210ea9fb.png)
-
-2. Click on the xib
-
-3. (For convenience) Go to attribute inspector and change the simulated metrics as below:
-
-    ![Image](https://user-images.githubusercontent.com/24646608/34810212-fcc4b7a4-f6ed-11e7-98b6-698ce2bf11e8.png)
-
-4. Add whatever views you want in the xib (Example):
+1. Create a xib file and add the reusable view to it (Example):
 
     ![Image](https://user-images.githubusercontent.com/24646608/34810736-4aba90b6-f6f1-11e7-8765-803c93fd06df.png)
 
-5. Create a Cocoa Touch Class and give it the same name as the xib (in my case it will be "ListingView"), **make sure it inherits from MSAutoView**
+2. Create a swift file and add a class that inherits from `MSAutoView`
 
-    ![Image](https://user-images.githubusercontent.com/24646608/34810665-dcc903da-f6f0-11e7-85a1-c0c4e5cbdd70.png)
-    
-6. Go back to the xib and click on the File's Owner in the Document Outline:
+```swift
+import UIKit
+import MSAutoView
 
-    ![Image](https://user-images.githubusercontent.com/24646608/34810829-b5e5afb0-f6f1-11e7-9f74-676b60d7cac6.png)
-    
-7. Click on the Identity Inspector and set the class to the cocoa touch class created in step 5 (in my case "ListingView")
+class ListingView: MSAutoView {
 
-    ![Image](https://user-images.githubusercontent.com/24646608/34810966-6839b2ba-f6f2-11e7-92b2-fbd6a0ef68d6.png)
+}
+```
+**Note: For the minimal configuration to work, the class's name should be the same as the xib's name**
 
-8. Add a view to your storyboard
-9. Set its class to the class created in step 5
-10. Run the project, the view should contain the content of the xib
+3. In the storyboard, add a normal view to your view controller and set its chass to the one created (`ListingView`)
+4. Run the project, the view should contain the content of the xib
 
     ![Image](https://user-images.githubusercontent.com/24646608/34811158-9ee32e80-f6f3-11e7-9645-b488647af327.png)
     
-## Customizing The View
+## Customization
+### Updating View Programmatically
 
-- You can add outlets to the class created and connect them in the xib:
+Ofcourse, the reusable view will be useless if you can't pass data to it programmatically. To do that, follow the steps below:
+
+1. Set the xib `File's Owner` class to the class created previously
+
+2. Add outlets to the class:
 
 ```swift
 class ListingView: MSAutoView {
@@ -80,60 +80,185 @@ class ListingView: MSAutoView {
 }
 ```
 
-![Image](https://user-images.githubusercontent.com/24646608/34811291-55f0c16e-f6f4-11e7-9c6b-54f9f702417e.png)
+3. In the xib file, connect the outlets to their respective views
 
-- You can also add Inspectable variables and set them from the storyboard (**make sure the inspectable variables are not optionals or it won't work**):
+5. In the view controller, create an outlet for the view
+
+```swift
+@IBOutlet weak var listingView: ListingView!
+```
+
+6. Connect the view controller's outlet to the view in the storyboard
+
+7. Change the text values of the labels in the view controller:
+
+```swift
+listingView.titleLabel.text = "This is a default title"
+listingView.detailsLabel.text =  "This is a default details"
+listingView.priceLabel.text = "300"
+```
+
+### Adding variables to update the view
+It's not a good convention to directly update the text in the labels. So, you can create variables to hold the values, and update the view when you change the values. To do that, follow the steps below:
+
+1. In the `ListingView` class file, add the following variables:
 
 ```swift
 class ListingView: MSAutoView {
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var detailsLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
+    //Outlets
     
-    @IBInspectable var title: String = "This is a default title"
-    @IBInspectable var details: String = "This is a default details"
-    @IBInspectable var price: Double = 300
+    var title: String?
+    var details: String?
+    var price: String?
+}
+```
+2. Override `updateView()` function to set the label texts:
+
+```swift
+class ListingView: MSAutoView {
+    
+    //Outlets
+    
+    //Variables
     
     override func updateView() {
+        super.updateView()
         titleLabel.text = title
         detailsLabel.text = details
-        priceLabel.text = String(describing: price)
-        
+        priceLabel.text = price
     }
-    
 }
 ```
-
-![Image](https://user-images.githubusercontent.com/24646608/34811485-34100180-f6f5-11e7-9671-44705690d06b.png)
-
-- You can also override the default values from the storyboard's attributes inspector for the view (**Make sure you don't set the attributes in the attribute inspector of the xib or they will override all other values**):
-
-![Image](https://user-images.githubusercontent.com/24646608/34811582-a519fe26-f6f5-11e7-8d71-80bb77d8c55f.png)
-
-This is the result:
-
-![Image](https://user-images.githubusercontent.com/24646608/34811599-c514e92a-f6f5-11e7-9405-e85e7ced94d5.png)
-
-- You can also create a reference for the view in the view controller's class and set its values:
+3. Set the values anywhere in the view controller and update the view:
 
 ```swift
-class ViewController: UIViewController {
+listingView.title = "This is a default title"
+listingView.details =  "This is a default details"
+listingView.price = "300"
+listingView.updateView()
+```
 
-    @IBOutlet weak var listingView: ListingView!
+### Using Inspectable variables
+You can use inspectable variables to hold the values for the labels:
+
+```swift
+class ListingView: MSAutoView {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        listingView.title = "Title from View Controller"
-        listingView.details = "Details from View Controller"
-        listingView.price = 40
-        listingView.updateView()
+    //Outlets
+    
+    @IBInspectable var title: String?
+    @IBInspectable var details: String?
+    @IBInspectable var price: Double = 0
+    
+    //Functions
+}
+```
+
+After creating the inspectable variables, you can set them either in the xib or the view controller
+
+### Using a default value for all instances of the view
+You can do this in 2 ways:
+1. Set the value in code:
+```swift
+var title: String? = "Default Title"
+```
+2. If it's an inspectable variable, set the value in the xib file
+
+### Setting defaut value for view in a specific view controller
+If your class variables are inspectables, you can change the default values in the storyboard
+
+### Adding padding to the main xib view programmatically
+As a recap, the class will embed the xib's view in the main view by adding top, left, bottom and right constraints. To add padding to the constraints, you can set their constant value other than 0. You can do that in the `initView()` function:
+
+```swift
+override func initView() {
+    super.initView { (top, left, bottom, right) in
+        top.constant = 10
+        left.constant = 10
+        bottom.constant = -10
+        right.constant = -10
+    }
+    updateView()
+}
+```
+Note that the bottom and right constants should be negative to work as intended
+
+
+### Using a xib with name different than class name
+If you wish to name your xib something other than the class name, you can do the following:
+1. In the class file, override the `initView()` function:
+
+```swift
+class ListingView: MSAutoView {
+
+    //Outlets
+    
+    //Variables
+    
+    override func initView() {
+        self.xibName = "ListingView2"
+        super.initView()
     }
 
 }
 ```
 
-![Image](https://user-images.githubusercontent.com/24646608/34811911-7f51df36-f6f7-11e7-9a48-fce96c59d195.png)
+### Using a xib with bundle different than the class bundle
+
+```swift
+class ListingView: MSAutoView {
+
+    //Outlets
+    
+    //Variables
+    
+    override func initView() {
+        self.xibBundle = Bundle(identifier: "Identifier")
+        super.initView()
+    }
+
+}
+```
+
+### Using protocol instead of subclassing
+If you inherit from another view and subclassing is not an option, there's a protocol that can be used to easily embed views:
+
+```swift
+public protocol MSXibEmbedding: AnyObject {
+    var xibBundle: Bundle? { set get  }
+    var xibName: String? { set get }
+    
+    func loadXibMainView(constraintsConfiguration: ConstraintsConfiguration?)
+    func loadXibItems(xibItemsConfiguration: XibItemsConfiguration?)
+}
+```
+
+There's extension functions for the protocol functions so you don't have to worry about the actual implementation. Just make your view conform to the `MSXibEmbedding` protocol and call `loadXibMainView()` when you initialize your view
+
+### Adding a view inside another view with constraints programmatically
+
+You can easily aggregate views by placing them inside each other. You can do that using the `UIView` extension function below:
+
+```swift
+public func addSubviewWithConstraints(_ subview: UIView, constraintsConfiguration: ConstraintsConfiguration? = nil)
+```
+
+Example:
+```swift
+parentView.addSubviewWithConstraints(childView)
+```
+
+### Using xibs with multiple items
+You might want to use a xib which has multiple top level views. Maybe there are also objects other than views. To do that, override the `initView()` as follows:
+```swift
+override func initView() {
+    loadXibItems { (items) in
+        //Use xib items here, maybe save them in variables ...
+    }
+}
+```
+**Note: If you call `loadXibItems` more than once, the previously loaded xib items will be discarded and the new items will be available. So you might get a `nil` if you try to access a discarded item.**
 
 ## Authors
 
