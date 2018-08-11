@@ -12,6 +12,7 @@
 		3D9A495602E93BF176DDB827CA4ED6D1 /* MSAutoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB489E2D80F65287E41625A01ED0F273 /* MSAutoView.swift */; };
 		56F9AE65D98F8406EFE45B82D298D76E /* Pods-MSAutoView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E6AA15437050F5BB3F26A5618705 /* Pods-MSAutoView_Tests-dummy.m */; };
 		695CAF8B211D8E37003FB76D /* MSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695CAF8A211D8E37003FB76D /* MSTableViewCell.swift */; };
+		69F7BAC0211ECBCA00A4B8E0 /* MSCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F7BABF211ECBCA00A4B8E0 /* MSCollectionViewCell.swift */; };
 		9A9113404D4E3F7497DB4447C0F6EC10 /* Pods-MSAutoView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CDA5AA9972627B38AD5715762CB5189B /* Pods-MSAutoView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4B418EE9B25302E3D351E872BDD021D /* MSAutoView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DA14F2526631ADB38D986EA256623D2 /* MSAutoView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D17A5AE5BEFE811F73323C2A7A48F0AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
@@ -53,6 +54,7 @@
 		5D980DDDDBDE5A32BFFFB18AD6C95197 /* MSAutoView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MSAutoView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60AF21EA36AE09BF829A590D3C71A515 /* Pods-MSAutoView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MSAutoView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		695CAF8A211D8E37003FB76D /* MSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MSTableViewCell.swift; path = MSAutoView/Classes/MSTableViewCell.swift; sourceTree = "<group>"; };
+		69F7BABF211ECBCA00A4B8E0 /* MSCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MSCollectionViewCell.swift; path = MSAutoView/Classes/MSCollectionViewCell.swift; sourceTree = "<group>"; };
 		6BFEA7A9A92AECC15D3CF34E95CEA1E2 /* Pods-MSAutoView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MSAutoView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6D4D80C8546516CEBE9CFB092623B0BB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		789725B7A3BBB605F25BE698F3978B8A /* Pods-MSAutoView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MSAutoView_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				EB489E2D80F65287E41625A01ED0F273 /* MSAutoView.swift */,
 				695CAF8A211D8E37003FB76D /* MSTableViewCell.swift */,
+				69F7BABF211ECBCA00A4B8E0 /* MSCollectionViewCell.swift */,
 				57480D395F4E11EA46E7A9058E3A1F93 /* UIView+MSAutoView.swift */,
 				C34011EE1E9292E6CD0249EF77934BC3 /* Pod */,
 				07B0589F0CA2ED6473142EA62CD901E6 /* Support Files */,
@@ -358,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				695CAF8B211D8E37003FB76D /* MSTableViewCell.swift in Sources */,
+				69F7BAC0211ECBCA00A4B8E0 /* MSCollectionViewCell.swift in Sources */,
 				ED4C6CF7715DF6DAC9E1F9A435A969C7 /* MSAutoView-dummy.m in Sources */,
 				3D9A495602E93BF176DDB827CA4ED6D1 /* MSAutoView.swift in Sources */,
 				D6E3FBD392203B07B1A9F78874C961AA /* UIView+MSAutoView.swift in Sources */,
