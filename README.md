@@ -163,7 +163,7 @@ If you want to save the hassle of creating a new cell class for each view that i
 2. Register the cell programmatically:
 
 ```swift
-tableView.register(MSTableViewCell<ListingView>, forCellWithReuseIdentifier: "Cell")
+tableView.register(MSTableViewCell<ListingView>.self, forCellWithReuseIdentifier: "Cell")
 ```
 Alternatively, `MSAutoView` adds an extension to `UIView` which has variables that return a table view cell from any view. So, you can register the cell as such:
 
