@@ -157,6 +157,34 @@ class ListingView: MSAutoView {
 
 After creating the inspectable variables, you can set them either in the xib or the view controller
 
+### Creating a table view cell from any view
+If you want to save the hassle of creating a new cell class for each view that is used in a `UITableView`, you can use the generic class `MSTableViewCell<T>` supplied by the repository. You can use it as follows:
+1. Create a table view
+2. Register the cell programmatically:
+
+```swift
+tableView.register(MSTableViewCell<ListingView>, forCellWithReuseIdentifier: "Cell")
+```
+Alternatively, `MSAutoView` adds an extension to `UIView` which has variables that return a table view cell from any view. So, you can register the cell as such:
+
+```swift
+tableView.register(ListingView.tableViewCell.self, forCellWithReuseIdentifier: "Cell")
+```
+3. In the `tableView(_:cellForRowAt:)`, dequeue the cell with the reuse identifier like this:
+
+```swift
+let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MSTableViewCell<ListingView>
+```
+4. You can access the encapsulated view using the vairable `mainView` on the cell:
+
+```swift
+cell.mainView.doSomething()
+```
+This class is an `open` class so you can subclass it as you wish to add more features.
+
+### Creating a collection view cell from any view
+Creating a collection view cell from any view acts similar as creating a table view cell. But, you would use the extension variable `collectionViewCell` instead of the `tableViewCell`
+
 ### Using a default value for all instances of the view
 You can do this in 2 ways:
 1. Set the value in code:
