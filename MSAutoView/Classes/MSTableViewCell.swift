@@ -7,9 +7,9 @@
 
 import UIKit
 
-public class MSTableViewCell<T: UIView>: UITableViewCell {
+open class MSTableViewCell<T: UIView>: UITableViewCell {
     
-    var mainView = T()
+    public var mainView = T()
     
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -21,29 +21,30 @@ public class MSTableViewCell<T: UIView>: UITableViewCell {
         initView()
     }
     
-    func initView() {
+    public func initView() {
+        mainView.removeFromSuperview()
         contentView.addSubviewWithConstraints(mainView)
         backgroundColor = mainView.backgroundColor
     }
 }
 
 
-public protocol CellContainable {
-    associatedtype CellContainedViewType: UIView
+public protocol TableViewCellContainable {
+    associatedtype TableViewCellContainedViewType: UIView
     
-    var cell: MSTableViewCell<CellContainedViewType> { get }
-    static var cell: MSTableViewCell<CellContainedViewType>.Type { get }
+    var tableViewCell: MSTableViewCell<TableViewCellContainedViewType> { get }
+    static var tableViewCell: MSTableViewCell<TableViewCellContainedViewType>.Type { get }
 }
 
-extension CellContainable where Self: UIView {
+extension TableViewCellContainable where Self: UIView {
 
-    public var cell: MSTableViewCell<Self> {
+    public var tableViewCell: MSTableViewCell<Self> {
         return MSTableViewCell()
     }
     
-    public static var cell: MSTableViewCell<Self>.Type {
+    public static var tableViewCell: MSTableViewCell<Self>.Type {
         return MSTableViewCell<Self>.self
     }
 }
 
-extension UIView: CellContainable { }
+extension UIView: TableViewCellContainable { }
