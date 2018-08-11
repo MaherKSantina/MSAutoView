@@ -11,6 +11,8 @@
 		3B5D001EA88FD2E544BF67282D0159B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		3D9A495602E93BF176DDB827CA4ED6D1 /* MSAutoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB489E2D80F65287E41625A01ED0F273 /* MSAutoView.swift */; };
 		56F9AE65D98F8406EFE45B82D298D76E /* Pods-MSAutoView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E6AA15437050F5BB3F26A5618705 /* Pods-MSAutoView_Tests-dummy.m */; };
+		695CAF8B211D8E37003FB76D /* MSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695CAF8A211D8E37003FB76D /* MSTableViewCell.swift */; };
+		69F7BAC0211ECBCA00A4B8E0 /* MSCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F7BABF211ECBCA00A4B8E0 /* MSCollectionViewCell.swift */; };
 		9A9113404D4E3F7497DB4447C0F6EC10 /* Pods-MSAutoView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CDA5AA9972627B38AD5715762CB5189B /* Pods-MSAutoView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4B418EE9B25302E3D351E872BDD021D /* MSAutoView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DA14F2526631ADB38D986EA256623D2 /* MSAutoView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D17A5AE5BEFE811F73323C2A7A48F0AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
@@ -49,31 +51,33 @@
 		4E0CC46387B6C3F9E40BB974A1227CF1 /* Pods-MSAutoView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MSAutoView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		57480D395F4E11EA46E7A9058E3A1F93 /* UIView+MSAutoView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+MSAutoView.swift"; path = "MSAutoView/Classes/UIView+MSAutoView.swift"; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		5D980DDDDBDE5A32BFFFB18AD6C95197 /* MSAutoView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MSAutoView.framework; path = MSAutoView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D980DDDDBDE5A32BFFFB18AD6C95197 /* MSAutoView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MSAutoView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60AF21EA36AE09BF829A590D3C71A515 /* Pods-MSAutoView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MSAutoView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		695CAF8A211D8E37003FB76D /* MSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MSTableViewCell.swift; path = MSAutoView/Classes/MSTableViewCell.swift; sourceTree = "<group>"; };
+		69F7BABF211ECBCA00A4B8E0 /* MSCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MSCollectionViewCell.swift; path = MSAutoView/Classes/MSCollectionViewCell.swift; sourceTree = "<group>"; };
 		6BFEA7A9A92AECC15D3CF34E95CEA1E2 /* Pods-MSAutoView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MSAutoView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		6D4D80C8546516CEBE9CFB092623B0BB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		6D4D80C8546516CEBE9CFB092623B0BB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		789725B7A3BBB605F25BE698F3978B8A /* Pods-MSAutoView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MSAutoView_Example-frameworks.sh"; sourceTree = "<group>"; };
 		81F2E6AA15437050F5BB3F26A5618705 /* Pods-MSAutoView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MSAutoView_Tests-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93F35A0386BB8ADA3473D6BD7BC76505 /* MSAutoView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MSAutoView-prefix.pch"; sourceTree = "<group>"; };
 		989680AFD0336E21578B9AD9C3C43C95 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9CEF67D28DC6C2C636CA19746E9D9079 /* Pods_MSAutoView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MSAutoView_Example.framework; path = "Pods-MSAutoView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CEF67D28DC6C2C636CA19746E9D9079 /* Pods_MSAutoView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MSAutoView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4D62CC486CF210EF70B3CCCE343BF7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC3E20A06CD7512F1E32F07EFC56859F /* Pods-MSAutoView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MSAutoView_Tests.modulemap"; sourceTree = "<group>"; };
 		B03581AFEEE5F244A89AE3C6F167E0BF /* Pods-MSAutoView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MSAutoView_Example-resources.sh"; sourceTree = "<group>"; };
 		BAB50AF5FF7EB3260D54D4E5D0A53554 /* MSAutoView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MSAutoView.modulemap; sourceTree = "<group>"; };
 		C293C19EE088483CCB734947B0099E86 /* Pods-MSAutoView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MSAutoView_Example-dummy.m"; sourceTree = "<group>"; };
-		C5E45F0C6F7519A012A2D9EB74BF7F2F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		C5E45F0C6F7519A012A2D9EB74BF7F2F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CD18E88733A462C403E8418A30434AE1 /* Pods-MSAutoView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MSAutoView_Example-umbrella.h"; sourceTree = "<group>"; };
 		CDA5AA9972627B38AD5715762CB5189B /* Pods-MSAutoView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MSAutoView_Tests-umbrella.h"; sourceTree = "<group>"; };
-		CF1666C9C6F69AD678778D57D3AF81CB /* Pods_MSAutoView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MSAutoView_Tests.framework; path = "Pods-MSAutoView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF1666C9C6F69AD678778D57D3AF81CB /* Pods_MSAutoView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MSAutoView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFC07FB9048224AF94F4669A1E90F6B8 /* Pods-MSAutoView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MSAutoView_Tests-resources.sh"; sourceTree = "<group>"; };
 		DE9409C365B74366F895F44C365F6EF1 /* Pods-MSAutoView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MSAutoView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		EB489E2D80F65287E41625A01ED0F273 /* MSAutoView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MSAutoView.swift; path = MSAutoView/Classes/MSAutoView.swift; sourceTree = "<group>"; };
 		ED4CC992DD90D19F385EB7B01F44A73B /* Pods-MSAutoView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MSAutoView_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		F47E3039A9C05C8BAD04C3F51787957C /* Pods-MSAutoView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MSAutoView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F61DBBD351BC7FDA235F4F64042B1809 /* MSAutoView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = MSAutoView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F61DBBD351BC7FDA235F4F64042B1809 /* MSAutoView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = MSAutoView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				EB489E2D80F65287E41625A01ED0F273 /* MSAutoView.swift */,
+				695CAF8A211D8E37003FB76D /* MSTableViewCell.swift */,
+				69F7BABF211ECBCA00A4B8E0 /* MSCollectionViewCell.swift */,
 				57480D395F4E11EA46E7A9058E3A1F93 /* UIView+MSAutoView.swift */,
 				C34011EE1E9292E6CD0249EF77934BC3 /* Pod */,
 				07B0589F0CA2ED6473142EA62CD901E6 /* Support Files */,
@@ -354,6 +360,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				695CAF8B211D8E37003FB76D /* MSTableViewCell.swift in Sources */,
+				69F7BAC0211ECBCA00A4B8E0 /* MSCollectionViewCell.swift in Sources */,
 				ED4C6CF7715DF6DAC9E1F9A435A969C7 /* MSAutoView-dummy.m in Sources */,
 				3D9A495602E93BF176DDB827CA4ED6D1 /* MSAutoView.swift in Sources */,
 				D6E3FBD392203B07B1A9F78874C961AA /* UIView+MSAutoView.swift in Sources */,
