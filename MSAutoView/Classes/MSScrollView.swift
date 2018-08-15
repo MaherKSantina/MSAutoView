@@ -10,7 +10,7 @@ import UIKit
 open class MSScrollView<T: UIView>: UIScrollView {
     public var mainView: T?
     
-    func initView(mainView: T) {
+    public func initView(mainView: T) {
         self.mainView?.removeFromSuperview()
         addSubviewWithConstraints(mainView)
         let constraint = NSLayoutConstraint(item: mainView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)
