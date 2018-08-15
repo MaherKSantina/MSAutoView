@@ -185,6 +185,14 @@ This class is an `open` class so you can subclass it as you wish to add more fea
 ### Creating a collection view cell from any view
 Creating a collection view cell from any view acts similar as creating a table view cell. But, you would use the extension variable `collectionViewCell` instead of the `tableViewCell`
 
+### Creating a scroll view from any view
+Creating a scroll view is the same as creating a table view/collection view. Assuming that you have a tall view of class `TallView` which has a label called `anyLabel`, you can do the following in your view controller
+```swift
+let tallView = TallView()
+tallView.anyLabel.text = "This is a dummy text"
+view.addSubviewWithConstraints(tallView.scrollView)
+```
+
 ### Using a default value for all instances of the view
 You can do this in 2 ways:
 1. Set the value in code:
