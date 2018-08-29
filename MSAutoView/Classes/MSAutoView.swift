@@ -53,6 +53,8 @@ open class MSAutoView: UIView, MSXibEmbedding {
     
     public var xibBundle: Bundle?
     public var xibName: String?
+    public weak var tableViewCell: UITableViewCell?
+    public weak var collectionViewCell: UICollectionViewCell?
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

@@ -185,6 +185,14 @@ This class is an `open` class so you can subclass it as you wish to add more fea
 ### Creating a collection view cell from any view
 Creating a collection view cell from any view acts similar as creating a table view cell. But, you would use the extension variable `collectionViewCell` instead of the `tableViewCell`
 
+### Getting the table view cell or collection view cell of any view (If exists)
+The `MSAutoView` now has two properties which can be set to be able to retrieve the table view cell/collection view cell later on from the view
+```swift
+public weak var tableViewCell: UITableViewCell?
+public weak var collectionViewCell: UICollectionViewCell?
+```
+It works similar to the `superView` variable, just set the cell when setting up the view, and in the delegate functions you can retrieve the corresponding cell by calling either `view.tableViewCell` or `view.collectionViewCell`
+
 ### Creating a scroll view from any view
 Creating a scroll view is the same as creating a table view/collection view. Assuming that you have a tall view of class `TallView` which has a label called `anyLabel`, you can do the following in your view controller
 ```swift
