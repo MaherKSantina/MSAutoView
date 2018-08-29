@@ -1,5 +1,5 @@
 PODS:
-  - MSAutoView (2.6.0)
+  - MSAutoView (2.7.0)
 
 DEPENDENCIES:
   - MSAutoView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MSAutoView: 949eb469f8b8bdc50499f0530e24725e74c1720c
+  MSAutoView: c3cc17614011c964c60ec5e4ecd4f0313276affa
 
 PODFILE CHECKSUM: 706747bd031deee93b9c3b1183d1ca2b073305ba
 
