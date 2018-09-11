@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class MSTableViewCell<T: UIView>: UITableViewCell {
+open class MSTableViewCell<T: MSAutoView>: UITableViewCell {
     
     public var mainView = T()
     
@@ -25,26 +25,22 @@ open class MSTableViewCell<T: UIView>: UITableViewCell {
         mainView.removeFromSuperview()
         contentView.addSubviewWithConstraints(mainView)
         backgroundColor = mainView.backgroundColor
+        mainView.tableViewCell = self
     }
 }
 
 
 public protocol TableViewCellContainable {
-    associatedtype TableViewCellContainedViewType: UIView
+    associatedtype TableViewCellContainedViewType: MSAutoView
     
-    var tableViewCell: MSTableViewCell<TableViewCellContainedViewType> { get }
     static var tableViewCell: MSTableViewCell<TableViewCellContainedViewType>.Type { get }
 }
 
-extension TableViewCellContainable where Self: UIView {
-
-    public var tableViewCell: MSTableViewCell<Self> {
-        return MSTableViewCell()
-    }
+extension TableViewCellContainable where Self: MSAutoView {
     
     public static var tableViewCell: MSTableViewCell<Self>.Type {
         return MSTableViewCell<Self>.self
     }
 }
 
-extension UIView: TableViewCellContainable { }
+extension MSAutoView: TableViewCellContainable { }

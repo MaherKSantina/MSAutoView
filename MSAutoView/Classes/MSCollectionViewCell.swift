@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class MSCollectionViewCell<T: UIView>: UICollectionViewCell {
+open class MSCollectionViewCell<T: MSAutoView>: UICollectionViewCell {
     public var mainView = T()
     
     override init(frame: CGRect) {
@@ -24,25 +24,21 @@ open class MSCollectionViewCell<T: UIView>: UICollectionViewCell {
         mainView.removeFromSuperview()
         contentView.addSubviewWithConstraints(mainView)
         backgroundColor = mainView.backgroundColor
+        mainView.collectionViewCell = self
     }
 }
 
 public protocol CollectionViewCellContainable {
-    associatedtype CollectionViewCellContainedViewType: UIView
+    associatedtype CollectionViewCellContainedViewType: MSAutoView
     
-    var collectionViewCell: MSCollectionViewCell<CollectionViewCellContainedViewType> { get }
     static var collectionViewCell: MSCollectionViewCell<CollectionViewCellContainedViewType>.Type { get }
 }
 
-extension CollectionViewCellContainable where Self: UIView {
-    
-    public var collectionViewCell: MSCollectionViewCell<Self> {
-        return MSCollectionViewCell()
-    }
+extension CollectionViewCellContainable where Self: MSAutoView {
     
     public static var collectionViewCell: MSCollectionViewCell<Self>.Type {
         return MSCollectionViewCell<Self>.self
     }
 }
 
-extension UIView: CollectionViewCellContainable { }
+extension MSAutoView: CollectionViewCellContainable { }
