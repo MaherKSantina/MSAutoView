@@ -228,6 +228,24 @@ override func initView() {
 ```
 Note that the bottom and right constants should be negative to work as intended
 
+Alternatively, you can add paddings later on:
+```swift
+    fileprivate var leftLayoutConstraint: NSLayoutConstraint?
+    fileprivate var rightLayoutConstraint: NSLayoutConstraint?
+    
+    override func initView() {
+        super.initView {[weak self] (top, left, bottom, right) in
+            self?.leftLayoutConstraint = left
+            self?.rightLayoutConstraint = right
+        }
+    }
+
+    // update the margin whenever you want.
+    func updateMargin(_ left: CGFloat, _ right: CGFloat) {
+        self.leftLayoutConstraint?.constant = left
+        self.rightLayoutConstraint?.constant = right
+    }
+```
 
 ### Using a xib with name different than class name
 If you wish to name your xib something other than the class name, you can do the following:
