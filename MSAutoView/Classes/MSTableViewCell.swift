@@ -27,6 +27,11 @@ open class MSTableViewCell<T: MSAutoView>: UITableViewCell {
         backgroundColor = mainView.backgroundColor
         mainView.tableViewCell = self
     }
+    
+    open override func prepareForReuse() {
+        super.prepareForReuse()
+        mainView.prepareForReuse()
+    }
 }
 
 
