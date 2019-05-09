@@ -7,3 +7,7 @@ Example/MSAutoView\.xcworkspace/xcuserdata/
 Example/MSAutoView\.xcodeproj/xcuserdata/
 
 Example/Pods/Pods\.xcodeproj/xcuserdata/
+
+Carthage/Checkouts
+
+Carthage/Build
