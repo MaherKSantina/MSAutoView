@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "MSAutoView",
     platforms: [
-        .iOS("11.4")
+        .iOS("8.0")
     ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
