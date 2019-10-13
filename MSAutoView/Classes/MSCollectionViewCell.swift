@@ -4,7 +4,7 @@
 //
 //  Created by Maher Santina on 8/11/18.
 //
-
+#if canImport(UIKit)
 import UIKit
 
 open class MSCollectionViewCell<T: MSAutoView>: UICollectionViewCell {
@@ -47,3 +47,4 @@ extension CollectionViewCellContainable where Self: MSAutoView {
 }
 
 extension MSAutoView: CollectionViewCellContainable { }
+#endif

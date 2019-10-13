@@ -7,3 +7,12 @@ Example/MSAutoView\.xcworkspace/xcuserdata/
 Example/MSAutoView\.xcodeproj/xcuserdata/
 
 Example/Pods/Pods\.xcodeproj/xcuserdata/
+
+## SPM Support
+.swiftpm/
+.build/
+*.xcodeproj
+*.Resolved
+
+## Cocoapods Example project
+!Example/*.xcodeproj

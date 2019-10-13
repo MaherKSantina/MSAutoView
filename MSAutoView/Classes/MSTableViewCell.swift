@@ -4,7 +4,7 @@
 //
 //  Created by Maher Santina on 8/10/18.
 //
-
+#if canImport(UIKit)
 import UIKit
 
 open class MSTableViewCell<T: MSAutoView>: UITableViewCell {
@@ -49,3 +49,4 @@ extension TableViewCellContainable where Self: MSAutoView {
 }
 
 extension MSAutoView: TableViewCellContainable { }
+#endif

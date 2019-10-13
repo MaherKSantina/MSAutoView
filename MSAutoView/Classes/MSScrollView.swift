@@ -4,7 +4,7 @@
 //
 //  Created by Maher Santina on 8/14/18.
 //
-
+#if canImport(UIKit)
 import UIKit
 
 open class MSScrollView<T: UIView>: UIScrollView {
@@ -40,3 +40,4 @@ extension ScrollViewContainable where Self: UIView {
 }
 
 extension UIView: ScrollViewContainable { }
+#endif
