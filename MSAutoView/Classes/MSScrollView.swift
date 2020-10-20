@@ -27,7 +27,7 @@ public protocol ScrollViewContainable {
     static var scrollView: MSScrollView<ScrollViewContainedType>.Type { get }
 }
 
-extension ScrollViewContainable where Self: UIView {
+extension ScrollViewContainable where Self: MSXibEmbedding {
     public var scrollView: MSScrollView<Self> {
         let scrollView = MSScrollView<Self>()
         scrollView.initView(mainView: self)
@@ -39,5 +39,5 @@ extension ScrollViewContainable where Self: UIView {
     }
 }
 
-extension UIView: ScrollViewContainable { }
+extension MSAutoView: ScrollViewContainable { }
 #endif
