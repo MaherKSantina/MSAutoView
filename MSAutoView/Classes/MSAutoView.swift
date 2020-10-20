@@ -26,9 +26,19 @@ import UIKit
 
 public typealias XibItemsConfiguration = ([Any]?) -> Void
 
-public protocol MSXibEmbedding: AnyObject {
+public protocol MSXibEmbedding: UIView {
     var xibBundle: Bundle? { set get  }
     var xibName: String? { set get }
+    
+    var tableViewCell: UITableViewCell? { get set }
+    var collectionViewCell: UICollectionViewCell? { get set }
+    
+    func initView()
+    
+    init()
+    
+    func prepareForReuse()
+
     
     func loadXibMainView(constraintsConfiguration: ConstraintsConfiguration?)
     func loadXibItems(xibItemsConfiguration: XibItemsConfiguration?)

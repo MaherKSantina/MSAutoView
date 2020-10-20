@@ -7,7 +7,7 @@
 #if canImport(UIKit)
 import UIKit
 
-open class MSTableViewCell<T: MSAutoView>: UITableViewCell {
+open class MSTableViewCell<T: MSXibEmbedding>: UITableViewCell {
     
     public var mainView = T()
     
@@ -36,12 +36,12 @@ open class MSTableViewCell<T: MSAutoView>: UITableViewCell {
 
 
 public protocol TableViewCellContainable {
-    associatedtype TableViewCellContainedViewType: MSAutoView
+    associatedtype TableViewCellContainedViewType: MSXibEmbedding
     
     static var tableViewCell: MSTableViewCell<TableViewCellContainedViewType>.Type { get }
 }
 
-extension TableViewCellContainable where Self: MSAutoView {
+extension TableViewCellContainable where Self: MSXibEmbedding {
     
     public static var tableViewCell: MSTableViewCell<Self>.Type {
         return MSTableViewCell<Self>.self

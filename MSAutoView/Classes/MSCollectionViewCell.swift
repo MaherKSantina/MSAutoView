@@ -7,7 +7,7 @@
 #if canImport(UIKit)
 import UIKit
 
-open class MSCollectionViewCell<T: MSAutoView>: UICollectionViewCell {
+open class MSCollectionViewCell<T: MSXibEmbedding>: UICollectionViewCell {
     public var mainView = T()
     
     override init(frame: CGRect) {
@@ -39,7 +39,7 @@ public protocol CollectionViewCellContainable {
     static var collectionViewCell: MSCollectionViewCell<CollectionViewCellContainedViewType>.Type { get }
 }
 
-extension CollectionViewCellContainable where Self: MSAutoView {
+extension CollectionViewCellContainable where Self: MSXibEmbedding {
     
     public static var collectionViewCell: MSCollectionViewCell<Self>.Type {
         return MSCollectionViewCell<Self>.self
